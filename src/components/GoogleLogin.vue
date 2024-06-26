@@ -1,28 +1,3 @@
-<script setup lang="ts">
-
-import { GoogleSignInButton, type CredentialResponse } from "vue3-google-signin";
-
-
-const handleLoginSuccess = async (response: CredentialResponse) => {
-  const { credential } = response;
-
-  // credential is the access token
-  if (credential) {
-    const tokenCookie = useCookie('G_ID_TOKEN');
-    tokenCookie.value = credential;
-    location.reload();
-  }
-
-};
-
-// handle an error event
-const handleLoginError = () => {
-  console.error("Login failed");
-};
-
-</script>
-
-
 <template>
       <div class="login-welcome">
         <h1 id="login-app-name">EasyBalance</h1>
@@ -31,16 +6,32 @@ const handleLoginError = () => {
 
       <div class="g-login">
         <p id="g-login-message">Entre com sua conta Google</p>
-        <div>
-          <GoogleSignInButton id="g-login-button"
-            @success="handleLoginSuccess"
-            @error="handleLoginError"
-            shape="pill"
-            text="continue_with"
-          ></GoogleSignInButton>
+        <div id="g-login-button">
+          <GoogleLogin :callback="callback"/>
         </div>
       </div>
 </template>
+
+
+<script setup>
+import { onMounted } from "vue"
+import { googleOneTap } from "vue3-google-login"
+import { setIdTokenCookie } from '@/services/auth'
+
+onMounted(() => {
+  googleOneTap({ autoLogin: true })
+    .then((response) => {
+      setIdTokenCookie(response);
+    })
+    .catch((error) => {
+      console.error("Failed to login sign in with one tap", error)
+    })
+})
+
+const callback = (response) => {
+  setIdTokenCookie(response);
+}
+</script>
 
 
 <style>
