@@ -1,5 +1,5 @@
 <template>
-    <h1>ola dashboard</h1>
+    <h1>ola record transaction</h1>
 </template>
 
 
