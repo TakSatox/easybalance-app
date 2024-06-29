@@ -14,14 +14,20 @@
 
 
         <div class="footer">
-            <div class="user">
+            <div @click="isEnabled = !isEnabled" class="user">
                 <img id="user-img" :src="store.picture" />
                 <span id="user-name">{{ store.name }}</span>
-                <a id="user-arrow-down" >
-                    <img :src="arrowDown"/>
-                </a>
+
+                <img v-if="isEnabled" id="user-arrow" :src="arrowUp"/>
+                <img v-else id="user-arrow" :src="arrowDown"/>
+                
+                <Transition name="fade">
+                    <button v-if="isEnabled" @click="deleteIdTokenCookie" class="logout">Sair</button>
+                </Transition>
+                
             </div>
 
+        
             <hr>
             
             <a href="https://www.linkedin.com/in/carlostak/" target="_blank">
@@ -35,13 +41,33 @@
 
 
 <script setup>
+import header from '@/assets/sidebar/header.svg'
+import linkedin from '@/assets/sidebar/linkedin.png'
+import arrowDown from '@/assets/sidebar/arrow-down.png'
+import arrowUp from '@/assets/sidebar/arrow-up.png'
+
+
 import SidebarItem from '@/components/SidebarItem.vue'
 import { useUserStore } from "@/stores/user";
-import header from '@/assets/pictures/sidebar/header.svg'
-import linkedin from '@/assets/pictures/sidebar/linkedin.png'
-import arrowDown from '@/assets/pictures/sidebar/arrow-down.png'
+import { deleteIdTokenCookie } from '@/services/auth';
+import { ref } from 'vue';
+
 
 const store = useUserStore();
+const isEnabled = ref(false);
 
 
 </script>
+
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

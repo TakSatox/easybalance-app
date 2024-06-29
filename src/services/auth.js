@@ -25,8 +25,13 @@ const isAuthenticated = async () => {
 const setIdTokenCookie = (response) => {
     if(response) {
         Cookies.set('id_token', response.credential)
-        location.reload();
+        location.reload()
     }
-} 
+}
 
-export { isAuthenticated, setIdTokenCookie }
+const deleteIdTokenCookie = () => {
+    Cookies.remove('id_token')
+    location.reload()
+}
+
+export { isAuthenticated, setIdTokenCookie, deleteIdTokenCookie }
