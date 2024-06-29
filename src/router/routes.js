@@ -1,5 +1,5 @@
 import HomeView from '@/views/HomeView.vue'
-import GoogleLoginView from '@/views/GoogleLoginView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 
 export const routes = [
@@ -11,6 +11,6 @@ export const routes = [
     {
       path: '/login',
       name: 'login',
-      component: GoogleLoginView
+      component: LoginView
     }
   ]
