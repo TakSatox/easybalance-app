@@ -1,7 +1,6 @@
 <script setup>
 import GoogleLogin from '@/components/GoogleLogin.vue'
-
-document.body.className = 'login'
+import '@/css/google-login.css'
 
 </script>
 

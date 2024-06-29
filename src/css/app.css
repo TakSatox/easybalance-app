@@ -5,14 +5,13 @@ html {
 }
 
 
-body.home {
-    background-image: none;
-    background-color: #EEF4F7;
-}
-
-body.login {
-    background-image: url('@/assets/bg/bg-login.png');
+.bg {
     background-repeat: repeat;
     background-size: cover;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

@@ -1,5 +1,4 @@
 import '@/css/app.css'
-import '@/css/sidebar.css'
 import 'animate.css'
 
 

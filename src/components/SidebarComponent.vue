@@ -2,14 +2,16 @@
 
     <div class="sidebar">
         <div class="header">
-            <img :src="header" />
+            <RouterLink to="/">
+                <img :src="header" />
+            </RouterLink>
         </div>
         
         <div class="menu">
-            <SidebarItem img-filename="home.png" title="Dashboard" ></SidebarItem>
-            <SidebarItem img-filename="transaction.png" title="Transações" ></SidebarItem>
-            <SidebarItem img-filename="pending.png" title="Pendências" ></SidebarItem>
-            <SidebarItem img-filename="record-transaction.png" title="Registrar Transação" ></SidebarItem>
+            <SidebarItem img-filename="home.png" title="Dashboard" link="/dashboard"></SidebarItem>
+            <SidebarItem img-filename="transaction.png" title="Transações" link="/transactions"></SidebarItem>
+            <SidebarItem img-filename="pending.png" title="Pendências" link="/pending"></SidebarItem>
+            <SidebarItem img-filename="record-transaction.png" title="Registrar Transação" link="/record-transactions"></SidebarItem>
         </div>
 
 

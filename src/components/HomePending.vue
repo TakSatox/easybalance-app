@@ -1,5 +1,5 @@
 <template>
-    <h1>ola dashboard</h1>
+    <h1>ola pending</h1>
 </template>
 
 
