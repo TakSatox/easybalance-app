@@ -1,20 +1,25 @@
-<script setup>
-import { useUserStore } from "@/stores/user";
+<template>
+    <main> 
+        
+        <SideBarComponent></SideBarComponent>
 
-const store = useUserStore();
+        <div>
+            <HomeDashBoard></HomeDashBoard>
+        </div>
+        
+    </main>
+</template>
+
+
+<script setup>
+import HomeDashBoard from '@/components/HomeDashboard.vue'
+import SideBarComponent from '@/components/SidebarComponent.vue'
+
 
 document.body.className = 'home'
 
 </script>
 
-
-<template>
-    <main>  
-        <img :src="store.picture" />
-        <h1 class="animate__fadeInUp">Olá {{ store.name }}</h1>
-    </main>
-</template>
-
-
 <style>
+
 </style>

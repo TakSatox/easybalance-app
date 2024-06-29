@@ -1,0 +1,88 @@
+/* Whole sidebar */
+.sidebar {
+    background-color: #FFF;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+}
+
+/* Header */
+.sidebar .header img {
+    width: 280px;
+    margin-bottom: 20px;
+}
+
+
+/* Menu items */
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 10px;
+}
+
+
+.sidebar .menu img {
+    width: 30px;
+}
+
+.sidebar .menu .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.sidebar .menu .item #title {
+    color: #25282C;
+    font-size: 20.4px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+/* Footer */
+.sidebar .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: auto;
+}
+
+.sidebar .footer .user {
+    margin-left: 30px;
+    display: flex;
+    align-items: left;
+}
+
+.sidebar .footer .user #user-img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.sidebar .footer .user #user-name {
+    font-size: 20px;
+    margin-left: 15px;
+    align-self: center;
+}
+
+.sidebar .footer .user #user-arrow-down {
+    width: 20px;
+    margin-left: 100px;
+    align-self: center;
+}
+
+.sidebar .footer hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 240px;
+    color: 7A7E80;
+}
+
+.sidebar .footer #linkedin {
+    margin-top: 0px;
+    scale: 0.80;
+    
+}
