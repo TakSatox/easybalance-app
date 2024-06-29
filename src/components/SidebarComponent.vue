@@ -37,9 +37,9 @@
 <script setup>
 import SidebarItem from '@/components/SidebarItem.vue'
 import { useUserStore } from "@/stores/user";
-import header from '@/assets/pictures/sidebar/header.svg'
-import linkedin from '@/assets/pictures/sidebar/linkedin.png'
-import arrowDown from '@/assets/pictures/sidebar/arrow-down.png'
+import header from '@/assets/sidebar/header.svg'
+import linkedin from '@/assets/sidebar/linkedin.png'
+import arrowDown from '@/assets/sidebar/arrow-down.png'
 
 const store = useUserStore();
 
