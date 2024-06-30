@@ -3,11 +3,13 @@
   <div class="bg" :style="{ 'background-image': 'url(' + image + ')' }">
     <router-view v-slot="{ Component }">
       <transition
+      v-if="isRoute"
       enter-active-class="animate__animated animate__fadeInUp"
       mode="out-in"
       >
         <component :is="Component" />
       </transition>
+      <component :is="Component" />
     </router-view>
   </div>
 
@@ -32,12 +34,15 @@ backgroundSize.value = getBackgroundSize(
   viewportHeight.value
 );
 
+const isRoute = ref(false)
 
 router.beforeEach(async (to) => {
   if(to.name === 'login') {
     image.value = `src/assets/login/bg-login-${backgroundSize.value}.png`
+    isRoute.value = true
   }else {
     image.value = `src/assets/home/bg-home-${backgroundSize.value}.png`
+    isRoute.value = false
   }
 
 })

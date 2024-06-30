@@ -3,7 +3,7 @@
   <img :src="getImageUrl()" />
   <div class="text">
     <span id="title">{{ title }}</span>
-    <span id="value">{{ currency }} 6.320,90</span>
+    <span id="value">{{ currency }} {{ value }}</span>
   </div>
 </main>
 </template>
@@ -14,7 +14,8 @@ import { ref } from 'vue'
 
 const props = defineProps({
     imgFilename: String,
-    title: String
+    title: String,
+    value: String
 })
 
 const currency = ref("R$")
