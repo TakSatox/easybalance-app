@@ -1,5 +1,5 @@
 <template>
-    <RouterLink :class="isHighligth ?  'item-highlight' : 'item' " :to="link">
+    <RouterLink :class="isHighligth ?  'item-highlight' : 'item' " :to="itemRoute">
         <img :src="getImageUrl()" />
         <span id="title"> {{ title }} </span>
     </RouterLink>
@@ -14,14 +14,14 @@ import { computed } from 'vue';
 const props = defineProps({
     imgFilename: String,
     title: String,
-    link: String
+    itemRoute: String
 })
 
 
 const route = useRoute()
 
 const isHighligth = computed(() => {
-    if(route.path === props.link) {
+    if(route.path === props.itemRoute) {
         return '-highlight'
     }
 

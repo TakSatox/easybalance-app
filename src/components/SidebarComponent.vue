@@ -8,10 +8,10 @@
         </div>
         
         <div class="menu">
-            <SidebarItem img-filename="home.png" title="Dashboard" link="/dashboard"></SidebarItem>
-            <SidebarItem img-filename="transaction.png" title="Transações" link="/transactions"></SidebarItem>
-            <SidebarItem img-filename="pending.png" title="Pendências" link="/pending"></SidebarItem>
-            <SidebarItem img-filename="record-transaction.png" title="Registrar Transação" link="/record-transactions"></SidebarItem>
+            <SidebarItem img-filename="home.png" title="Dashboard" item-route="/dashboard"></SidebarItem>
+            <SidebarItem img-filename="transaction.png" title="Transações" item-route="/transactions"></SidebarItem>
+            <SidebarItem img-filename="pending.png" title="Pendências" item-route="/pending"></SidebarItem>
+            <SidebarItem img-filename="record-transaction.png" title="Registrar Transação" item-route="/record-transactions"></SidebarItem>
         </div>
 
 
