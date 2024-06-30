@@ -20,8 +20,8 @@
                 <img id="user-img" :src="store.picture" />
                 <span id="user-name">{{ store.name }}</span>
 
-                <img v-if="isEnabled" id="user-arrow" :src="arrowUp"/>
-                <img v-else id="user-arrow" :src="arrowDown"/>
+                <img v-if="isEnabled" class="arrow" :src="arrowUp"/>
+                <img v-else class="arrow" :src="arrowDown"/>
                 
                 <Transition name="fade">
                     <button v-if="isEnabled" @click="deleteIdTokenCookie" class="logout">Sair</button>
@@ -45,8 +45,8 @@
 <script setup>
 import header from '@/assets/sidebar/header.svg'
 import linkedin from '@/assets/sidebar/linkedin.png'
-import arrowDown from '@/assets/sidebar/arrow-down.png'
-import arrowUp from '@/assets/sidebar/arrow-up.png'
+import arrowDown from '@/assets/arrow-down.png'
+import arrowUp from '@/assets/arrow-up.png'
 
 
 import SidebarItem from '@/components/SidebarItem.vue'

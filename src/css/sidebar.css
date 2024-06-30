@@ -15,6 +15,7 @@
 .sidebar .header img {
     width: 280px;
     margin-bottom: 20px;
+    user-select: none;
 }
 
 
@@ -36,6 +37,11 @@
     padding-top: 20px;
     padding-left: 10px;
     padding-bottom: 20px;
+    color: #25282C;
+}
+
+.sidebar .menu .item:hover {
+    color: #5F43F4;
 }
 
 .sidebar .menu .item-highlight {
@@ -50,7 +56,6 @@
 }
 
 .sidebar .menu .item #title {
-    color: #25282C;
     font-size: 20.4px;
     font-weight: bold;
     margin-left: 15px;
@@ -79,9 +84,10 @@
     cursor: pointer;
 }
 
-.sidebar .footer .user #user-img {
+.sidebar .footer .user img {
     width: 50px;
     border-radius: 50%;
+    user-select: none;
 }
 
 .sidebar .footer .user #user-name {
@@ -91,7 +97,7 @@
     user-select: none;
 }
 
-.sidebar .footer .user #user-arrow {
+.sidebar .footer .user .arrow {
     width: 20px;
     margin-left: 100px;
     align-self: center;
@@ -109,28 +115,32 @@
 .sidebar .footer .logout {
     position: absolute;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     border: none;
     color: black;
     background-color: white;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
     top: 58px;
     left: 25px;
     z-index: 2;
     cursor: pointer;
     user-select: none;
+    margin-left: 150px;
+    margin-top: -10px;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .sidebar .footer .logout:hover {
-    background-color: rgb(216, 216, 216);
+    color: #5F43F4;
 }
-
 
 
 .sidebar .footer #linkedin {
     margin-top: 0px;
     scale: 0.80;
     z-index: 1;
+    user-select: none;
     
 }

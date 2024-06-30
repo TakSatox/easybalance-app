@@ -1,5 +1,5 @@
 /* Top cards */
-.home .top-card {
+.home .main-card {
     display: flex;
     flex-direction: row;
     margin-left: 350px;
@@ -7,18 +7,18 @@
     width: 1180px;
 }
 
-.home .top-card .money-card {
+.home .main-card .money-card {
     display: flex;
     margin-right: 20px;
     background-color: #FFF;
     border-color: #DDDDDD;
     border-width: 1px;
     border-style: solid;
-    border-radius: 5%;
+    border-radius: 10px;
     padding: 50px;
 }
 
-.home .top-card .money-card .text {
+.home .main-card .money-card .text {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -26,18 +26,18 @@
     font-weight: bold;
 }
 
-.home .top-card .money-card .text #title {
+.home .main-card .money-card .text #title {
     color: #00173393;
     font-size: 20px;
 }
 
-.home .top-card .money-card .text #value {
+.home .main-card .money-card .text #value {
     color: #25282C;
     font-size: 30px;
 }
 
 
-.home .top-card img {
+.home .main-card img {
     width: 80px;
 }
 
@@ -53,11 +53,9 @@
     display: flex;
     flex-direction: row;
     background-color: #FFF;
-    border-color: #DDDDDD;
     width: 230px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 4%;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
     margin-bottom: 10px;
     padding: 40px;
     padding-top: 35px;
@@ -84,4 +82,15 @@
 .home .rigth-card .money-card .text #value {
     color: #25282C;
     font-size: 20px;
+}
+
+.home .chart {
+    background-color: #FFF;
+    height: 500px;
+    width: 1110px;
+    margin-left: 350px;
+    margin-top: -513px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    text-align: center;
 }
