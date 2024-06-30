@@ -16,6 +16,7 @@
 
 <script setup>
 import '@/css/sidebar.css'
+import '@/css/home.css'
 
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';

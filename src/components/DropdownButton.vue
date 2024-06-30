@@ -1,8 +1,8 @@
 <template>
     <div class="drop-down" @click="isEnabled = !isEnabled">
-        <span>{{ title }}</span>
-        <img v-if="isEnabled" id="user-arrow" :src="arrowUp"/>
-        <img v-else id="user-arrow" :src="arrowDown"/>
+        <span id="title">{{ title }}</span>
+        <img v-if="isEnabled" id="arrow" :src="arrowUp"/>
+        <img v-else id="arrow" :src="arrowDown"/>
     </div>
 
 </template>
@@ -12,7 +12,7 @@ import arrowDown from '@/assets/sidebar/arrow-down.png'
 import arrowUp from '@/assets/sidebar/arrow-up.png'
 import { ref } from 'vue';
 
-const props = defineProps({
+defineProps({
     title: String
 })
 
