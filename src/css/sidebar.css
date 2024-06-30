@@ -88,12 +88,14 @@
     font-size: 20px;
     margin-left: 15px;
     align-self: center;
+    user-select: none;
 }
 
 .sidebar .footer .user #user-arrow {
     width: 20px;
     margin-left: 100px;
     align-self: center;
+    user-select: none;
 }
 
 .sidebar .footer hr {
@@ -117,6 +119,7 @@
     left: 25px;
     z-index: 2;
     cursor: pointer;
+    user-select: none;
 }
 
 .sidebar .footer .logout:hover {

@@ -1,0 +1,28 @@
+.home .date {
+    display: flex;
+    flex-direction: row;
+    margin-left: 700px;
+    margin-top: 20px;
+    width: 900px;
+    user-select: none;
+}
+
+.home .date .drop-down {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.home .date .drop-down #title {
+    margin: auto;
+    color: #173393;
+    font-weight: bold;
+}
+
+.home .date .drop-down #arrow {
+    align-self: center;
+}
