@@ -20,15 +20,15 @@
         </div>
 
         <div class="chart">
-            <h1>SIM</h1>
+            <img :src="question" />
         </div>
     </main>
 </template>
 
 
 <script setup>
-import '@/css/home-dashboard.css'
-import MoneyCard from './MoneyCard.vue';
+import question from '@/assets/home/dashboard/question.png'
+import MoneyCard from '@/components/MoneyCard.vue';
 import { ref } from 'vue';
 
 const mainCards = ref([
@@ -79,3 +79,109 @@ const rightCards =  ref([
 ])
 
 </script>
+
+
+<style>
+/* Top cards */
+.home .main-card {
+    display: flex;
+    flex-direction: row;
+    margin-left: 350px;
+    margin-top: 110px;
+    width: 1180px;
+}
+
+.home .main-card .money-card {
+    display: flex;
+    margin-right: 20px;
+    background-color: #FFF;
+    border-color: #DDDDDD;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.home .main-card .money-card .text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.home .main-card .money-card .text #title {
+    color: #00173393;
+    font-size: 20px;
+}
+
+.home .main-card .money-card .text #value {
+    color: #25282C;
+    font-size: 30px;
+}
+
+
+.home .main-card img {
+    width: 80px;
+}
+
+/* Right cards */
+.home .rigth-card {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1530px;
+    margin-top: -180px;
+}
+
+.home .rigth-card .money-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF;
+    width: 230px;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 40px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.home .rigth-card img {
+    width: 60px;
+}
+
+.home .rigth-card .money-card .text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.home .rigth-card .money-card .text #title {
+    color: #00173393;
+    font-size: 20px;
+}
+
+.home .rigth-card .money-card .text #value {
+    color: #25282C;
+    font-size: 20px;
+}
+
+.home .chart {
+    background-color: #FFF;
+    height: 500px;
+    width: 1110px;
+    margin-left: 350px;
+    margin-top: -513px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    text-align: center;
+}
+
+.home .chart img {
+    width: 30px;
+    margin-left: 1050px;
+    margin-top: 10px;
+}
+</style>
