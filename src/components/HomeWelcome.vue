@@ -17,8 +17,47 @@
 
 <script setup>
 import { useUserStore } from "@/stores/user";
-import "@/css/home-welcome.css"
 const store = useUserStore();
 
 
 </script>
+
+<style>
+.home .welcome-component {
+    margin-top: 300px;
+    margin-left: 250px;
+    text-align: center;
+}
+
+.home .welcome-component img {
+    width: 130px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.home .welcome-component h1 {
+    color: #25282C;
+}
+
+.home .credits {
+    display: flex;
+    flex-direction: column;
+    margin-top: 370px;
+    font-weight: bold;
+    text-align: center;
+    color: #25282C;
+}
+
+.home .credits :hover {
+    color: #5F43F4;
+}
+
+.home .credits a {
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.home .credits a:visited {
+    color: inherit;
+}
+</style>

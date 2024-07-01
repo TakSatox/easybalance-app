@@ -33,7 +33,7 @@ const extension = props.imgFilename.split('.')[1]
 
 
 function getImageUrl() {
-  return new URL(`../assets/sidebar/${fileName + isHighligth.value}.${extension}`, import.meta.url).href
+  return new URL(`../assets/home/sidebar/${fileName + isHighligth.value}.${extension}`, import.meta.url).href
 }
 
 

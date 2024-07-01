@@ -1,9 +1,3 @@
-<script setup>
-import GoogleLogin from '@/components/GoogleLogin.vue'
-import '@/css/google-login.css'
-
-</script>
-
 <template>
     <main>
         <GoogleLogin />
@@ -18,6 +12,11 @@ import '@/css/google-login.css'
         </a>
     </main>
 </template>
+
+<script setup>
+import GoogleLogin from '@/components/GoogleLogin.vue'
+
+</script>
 
 <style>
 

@@ -1,4 +1,3 @@
-import '@/css/app.css'
 import 'animate.css'
 
 

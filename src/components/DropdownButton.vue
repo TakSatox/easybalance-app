@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-import arrowDown from '@/assets/arrow-down.png'
-import arrowUp from '@/assets/arrow-up.png'
+import arrowDown from '@/assets/home/arrow-down.png'
+import arrowUp from '@/assets/home/arrow-up.png'
 import { ref } from 'vue';
 
 const props = defineProps({
