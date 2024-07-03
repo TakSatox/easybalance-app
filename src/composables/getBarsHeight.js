@@ -38,6 +38,14 @@ const calculateBarsHeight = (categories, maxHeight, minHeight) => {
             return bar
         })
 
+        for (let bar of bars) {
+            for (let secondBar of bars) {
+                if (bar.normalizedHeight > secondBar.normalizedHeight && secondBar.value > bar.value) {
+                    bar.normalizedHeight = secondBar.normalizedHeight - 10
+                }
+            }
+        }
+
     }
 
     return bars;
