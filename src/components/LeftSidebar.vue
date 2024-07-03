@@ -155,10 +155,6 @@ const isEnabled = ref(false);
     cursor: pointer;
 }
 
-.sidebar .footer .user:hover {
-    color: #5F43F4;
-}
-
 .sidebar .footer .user img {
     width: 50px;
     border-radius: 50%;
@@ -186,7 +182,6 @@ const isEnabled = ref(false);
     width: 240px;
     color: 7A7E80;
 }
-
 
 .sidebar .footer .logout {
     position: absolute;
