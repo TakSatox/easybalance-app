@@ -46,7 +46,7 @@ const categories = [
     },
     {
         name: "health",
-        value: 220
+        value: 2020
     },
     {
         name: "transport",
@@ -54,14 +54,13 @@ const categories = [
     },
     {
         name: "vacation",
-        value: 2000
+        value: 3000
     }
 ]
 
 const bars = calculateBarsHeight(categories, 340, 60);
 
 console.log(bars)
-
 
 
 </script>
