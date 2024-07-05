@@ -6,7 +6,7 @@
 
         <div class="date" v-else>
             <DropdownButton :title="allMonths[month]" :options="months"></DropdownButton>
-            <DropdownButton :title="year" :options="years"></DropdownButton>
+            <DropdownButton :title="year.toString()" :options="years"></DropdownButton>
         </div>
         
         <router-view></router-view>

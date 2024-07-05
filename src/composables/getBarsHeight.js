@@ -1,3 +1,5 @@
+// TODO make it clean
+
 const calculateBarsHeight = (categories, maxHeight, minHeight) => {
 
     const totalValue = categories.reduce((acc, category) => acc + category.value, 0);

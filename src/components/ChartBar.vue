@@ -17,8 +17,6 @@ const props = defineProps({
     value: Number
 })
 
-console.log(props.barSize)
-
 
 function getImageUrl() {
   return new URL(`../assets/home/dashboard/dash-${props.imgFileName}.png`, import.meta.url).href
