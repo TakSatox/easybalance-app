@@ -17,7 +17,11 @@
             :title="rightCard.title"
             :value="rightCard.value" 
             />
+
+            <img id="tree" :src="InvestingTree" />
         </div>
+
+        
 
         
         <DashboardChart />
@@ -29,6 +33,8 @@
 <script setup>
 import MoneyCard from '@/components/MoneyCard.vue';
 import DashboardChart from '@/components/DashboardChart.vue'
+
+import InvestingTree from '@/assets/home/dashboard/investing-tree.png'
 
 import { ref } from 'vue';
 
@@ -65,16 +71,6 @@ const rightCards =  ref([
     {
         imgFilename: "income.png",
         title: "Março",
-        value: "6000.00"
-    },
-    {
-        imgFilename: "income.png",
-        title: "Abril",
-        value: "6000.00"
-    },
-    {
-        imgFilename: "income.png",
-        title: "Maio",
         value: "6000.00"
     }
 ])
@@ -168,4 +164,11 @@ const rightCards =  ref([
     color: #25282C;
     font-size: 20px;
 }
+
+
+.home .rigth-card #tree {
+    width: 310px;
+    height: 310px;
+}
+
 </style>

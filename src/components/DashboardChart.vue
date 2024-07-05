@@ -50,17 +50,15 @@ const categories = [
     },
     {
         name: "transport",
-        value: 800
+        value: 900
     },
     {
         name: "vacation",
-        value: 3000
+        value: 2000
     }
 ]
 
 const bars = calculateBarsHeight(categories, 340, 60);
-
-console.log(bars)
 
 
 </script>

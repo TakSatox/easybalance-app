@@ -15,8 +15,8 @@
         </div>
 
 
-        <div class="footer">
-            <div @click="isEnabled = !isEnabled" class="user">
+        <div class="footer" ref="logoutRef">
+            <div @click.stop="isEnabled = !isEnabled" class="user">
                 <img id="user-img" :src="store.picture" />
                 <span id="user-name">{{ store.name }}</span>
 
@@ -24,7 +24,7 @@
                 <img v-else class="arrow" :src="arrowDown"/>
                 
                 <Transition name="fade">
-                    <button v-if="isEnabled" @click="deleteIdTokenCookie" class="logout">Sair</button>
+                    <button v-if="isEnabled" @click.stop="deleteIdTokenCookie" class="logout">Sair</button>
                 </Transition>
                 
             </div>
@@ -52,12 +52,26 @@ import arrowUp from '@/assets/home/arrow-up.png'
 import SidebarItem from '@/components/SidebarItem.vue'
 import { useUserStore } from "@/stores/user";
 import { deleteIdTokenCookie } from '@/services/auth';
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 
-const store = useUserStore();
-const isEnabled = ref(false);
+const store = useUserStore()
+const isEnabled = ref(false)
+const logoutRef = ref(null)
 
+const handleClickOutside = (event) => {
+    if (!logoutRef.value.contains(event.target)) {
+        isEnabled.value = false;
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('click', handleClickOutside)
+})
 
 </script>
 

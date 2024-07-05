@@ -1,6 +1,6 @@
 <template>
-    <main class="dropdown">
-        <div class="item" @click="isEnabled = !isEnabled">
+    <main class="dropdown" ref="dropdownRef">
+        <div class="item" @click.stop="isEnabled = !isEnabled">
             <span id="title">{{ selectedValue }}</span>
             <img v-if="isEnabled" class="arrow" :src="arrowUp"/>
             <img v-else class="arrow" :src="arrowDown"/>
@@ -8,13 +8,10 @@
     
         <Transition name="fade">
             <ul v-if="isEnabled">
-                <li v-for="option in options" :key="option.id" @click="selectValue(option)">{{ option }}</li>
+                <li v-for="option in options" :key="option.id" @click.stop="selectValue(option)">{{ option }}</li>
             </ul>            
         </Transition>
     </main>
-
-
-
 
 
 </template>
@@ -22,16 +19,16 @@
 <script setup>
 import arrowDown from '@/assets/home/arrow-down.png'
 import arrowUp from '@/assets/home/arrow-up.png'
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps({
     title: String,
     options: Array
 })
 
-const isEnabled = ref(false);
-
-const selectedValue = ref(props.title) 
+const isEnabled = ref(false)
+const selectedValue = ref(props.title)
+const dropdownRef = ref(null)
 
 
 const selectValue = (option) => {
@@ -39,6 +36,19 @@ const selectValue = (option) => {
    isEnabled.value = false
 }
 
+const handleClickOutside = (event) => {
+    if (!dropdownRef.value.contains(event.target)) {
+        isEnabled.value = false;
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('click', handleClickOutside)
+})
 
 </script>
 
