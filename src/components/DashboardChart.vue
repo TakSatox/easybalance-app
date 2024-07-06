@@ -21,7 +21,7 @@
 <script setup>
 import ChartBar from '@/components/ChartBar.vue'
 import { calculateBarsHeight } from '@/composables/getBarsHeight';
-import question from '@/assets/home/dashboard/question.png'
+import question from '@/assets/home/question.png'
 
 const categories = [
     {

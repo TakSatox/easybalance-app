@@ -22,7 +22,7 @@ const currency = ref("R$")
 
 
 function getImageUrl() {
-  return new URL(`../assets/home/dashboard/${props.imgFilename}`, import.meta.url).href
+  return new URL(`../assets/home/${props.imgFilename}`, import.meta.url).href
 }
 
 </script>
