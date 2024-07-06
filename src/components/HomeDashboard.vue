@@ -34,7 +34,7 @@
 import MoneyCard from '@/components/MoneyCard.vue';
 import DashboardChart from '@/components/DashboardChart.vue'
 
-import InvestingTree from '@/assets/home/dashboard/investing-tree.png'
+import InvestingTree from '@/assets/home/investing-tree.png'
 
 import { ref } from 'vue';
 

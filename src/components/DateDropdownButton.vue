@@ -12,8 +12,6 @@
             </ul>            
         </Transition>
     </main>
-
-
 </template>
 
 <script setup>
@@ -137,23 +135,23 @@ onUnmounted(() => {
 }
 
 .home .date .dropdown ul::-webkit-scrollbar {
-    width: 10px; /* largura da barra de rolagem */
+    width: 10px;
 }
 
-/* Estiliza o trilho da barra de rolagem */
+
 .home .date .dropdown ul::-webkit-scrollbar-track {
-    background: #f1f1f1; /* cor de fundo do trilho */
-    border-radius: 10px; /* bordas arredondadas do trilho */
+    background: #f1f1f1;
+    border-radius: 10px;
 }
 
-/* Estiliza o polegar da barra de rolagem */
+
 .home .date .dropdown ul::-webkit-scrollbar-thumb {
-    background: #888; /* cor do polegar */
-    border-radius: 10px; /* bordas arredondadas do polegar */
+    background: #888;
+    border-radius: 10px;
 }
 
-/* Estiliza o polegar quando estiver sendo pressionado */
+
 .home .date .dropdown ul::-webkit-scrollbar-thumb:active {
-    background: #555; /* cor do polegar quando pressionado */
+    background: #555; 
 }
 </style>

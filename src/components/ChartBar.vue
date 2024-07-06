@@ -19,7 +19,7 @@ const props = defineProps({
 
 
 function getImageUrl() {
-  return new URL(`../assets/home/dashboard/dash-${props.imgFileName}.png`, import.meta.url).href
+  return new URL(`../assets/home/dash-${props.imgFileName}.png`, import.meta.url).href
 }
 
 </script>
