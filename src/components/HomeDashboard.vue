@@ -42,16 +42,19 @@ const mainCards = ref([
     {
         imgFilename: "balance.png",
         title: "Saldo",
+        // TODO comes from API
         value: "6599.90"
     },
     {
         imgFilename: "income.png",
         title: "Receitas",
+        // TODO comes from API
         value: "6999.90"
     },
     {
         imgFilename: "expense.png",
         title: "Despesas",
+        // TODO comes from API
         value: "6999.90"
     },
 ]) 
@@ -60,16 +63,19 @@ const mainCards = ref([
 const rightCards =  ref([
     {
         imgFilename: "income.png",
+        // TODO comes from API
         title: "Janeiro",
         value: "6000.00"
     },
     {
         imgFilename: "income.png",
+        // TODO comes from API
         title: "Fevereiro",
         value: "6000.00"
     },
     {
         imgFilename: "income.png",
+        // TODO comes from API
         title: "Março",
         value: "6000.00"
     }
@@ -170,5 +176,7 @@ const rightCards =  ref([
     width: 310px;
     height: 310px;
 }
+
+
 
 </style>

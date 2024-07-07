@@ -3,32 +3,38 @@
         <div class="item" @click.stop="isEnabled = !isEnabled">
             <img id="category-img" :src="getImageUrl(imgFileName)" />
             <span id="title">{{ title }}</span>
-            <img v-if="isEnabled" class="arrow" :src="arrowUp"/>
-            <img v-else class="arrow" :src="arrowDown"/>
         </div>
     
         <Transition name="fade">
-            <ul v-if="isEnabled">
+            <ul v-if="isEnabled && dropSize === 'large'" style="height: 500px;">
                 <li v-for="option in options" :key="option.id" @click.stop="selectValue(option)" @click="$emit('valueSelected', option)">
                     <div class="list-item">
                         <img id="selected-category-img" :src="getImageUrl(option.imgFileName)"/>
                         <span id="text">{{ option.name }}</span>
                     </div>
                 </li>
-            </ul>            
+            </ul>
+            
+            <ul v-else-if="isEnabled && dropSize === 'small'" style="height: 110px;">
+                <li v-for="option in options" :key="option.id" @click.stop="selectValue(option)" @click="$emit('valueSelected', option)">
+                    <div class="list-item">
+                        <img id="selected-category-img" :src="getImageUrl(option.imgFileName)"/>
+                        <span id="text">{{ option.name }}</span>
+                    </div>
+                </li>
+            </ul>
         </Transition>
     </main>
 </template>
 
 <script setup>
-import arrowDown from '@/assets/home/arrow-down.png'
-import arrowUp from '@/assets/home/arrow-up.png'
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps({
     title: String,
     imgFileName: String,
-    options: Array
+    options: Array,
+    dropSize: String
 })
 
 const isEnabled = ref(false)
@@ -109,7 +115,10 @@ onUnmounted(() => {
 }
 
 .home-record-transaction .category .dropdown .item #title {
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: 70px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -133,7 +142,7 @@ onUnmounted(() => {
     overflow-y: auto;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
-    
+    z-index: 2;
 }
 
 .home-record-transaction .category .dropdown .list-item {

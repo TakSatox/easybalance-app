@@ -23,6 +23,7 @@ import ChartBar from '@/components/ChartBar.vue'
 import { calculateBarsHeight } from '@/composables/getBarsHeight';
 import question from '@/assets/home/question.png'
 
+// TODO comes from API
 const categories = [
     {
         name: "recurring-bill",
