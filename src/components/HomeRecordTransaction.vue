@@ -21,12 +21,12 @@
 
                     <div class="label-box">
                         <label class="label" for="date">Data inicial</label>
-                        <input class="box" id="inital-date" type="month" name="date" required>
+                        <input class="box date" type="month" name="date" required>
                     </div>
 
                     <div class="label-box">
                         <label class="label" for="end-date">Data final (opcional)</label>
-                        <input class="box" id="end-date" type="month" name="end-date" required>
+                        <input class="box date" type="month" name="end-date" required>
                     </div>
 
                 </div>
@@ -274,6 +274,12 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-bottom: 50px;
 }
 
+.home-record-transaction form .label-box:hover {
+    color: #735df0;
+    cursor: pointer;
+}
+
+
 .home-record-transaction form .lower-boxes .left {
     font-display: flex;
     flex-direction: column;
@@ -332,6 +338,10 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-right: 260px;
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.home-record-transaction .lower-boxes .right .label-box .dropdown .item:hover {
+    cursor: pointer;
 }
 
 .home-record-transaction .lower-boxes .right .label-box .dropdown .item #title {
