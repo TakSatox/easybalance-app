@@ -4,7 +4,7 @@ const store = useUserStore()
 
 
 async function isAuthenticated(): Promise<boolean> { 
-    const token = useCookie('G_ID_TOKEN')
+    const token = useCookie('idToken')
 
     if (!token.value) {
         return false;

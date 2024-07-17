@@ -4,18 +4,9 @@ export const piniaInstance = createPinia()
 export default { store: setActivePinia(piniaInstance) }
 
 
-export const useUserStore = defineStore('user',{
-    state: () => {
-        return {
-            name: '' as string,
-            picture: '' as string,
-        }
-    },
+export const useUserStore = defineStore('user', () => {
+    const name = ref('')
+    const picture = ref('')
 
-    actions: {
-        updateUser(name: string, picture: string) {
-            this.name = name,
-            this.picture = picture
-        }
-    },
-})
+    return { name, picture }
+  })

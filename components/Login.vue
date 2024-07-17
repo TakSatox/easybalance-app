@@ -8,7 +8,7 @@ const handleLoginSuccess = async (response: CredentialResponse) => {
 
   // credential is the access token
   if (credential) {
-    const tokenCookie = useCookie('G_ID_TOKEN');
+    const tokenCookie = useCookie('idToken');
     tokenCookie.value = credential;
     location.reload();
   }

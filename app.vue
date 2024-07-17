@@ -1,5 +1,34 @@
 <template>
-  <div>
+  <NuxtLayout>
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
+
+<script setup>
+import { getBackgroundSize } from './server/composables/getBackgroundSize';
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+</script>
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+
+.bg {
+    background-repeat: repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>

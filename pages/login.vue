@@ -1,7 +1,3 @@
-<script setup>
-import Login from '../components/Login.vue'
-</script>
-
 <template>
     <Login />
 
@@ -15,14 +11,15 @@ import Login from '../components/Login.vue'
     </a>
 </template>
 
+<script setup>
+import Login from '../components/Login.vue'
+
+definePageMeta({
+  layout: 'login'
+})
+</script>
+
 <style>
-
-body {
-    background-image: url('@/assets/bg/bg-login.png');
-    background-repeat: repeat;
-    background-size: cover;
-}
-
 #linkedin {
     margin-top: 220px;
 }
