@@ -9,6 +9,10 @@ import { getBackgroundSize } from './server/composables/getBackgroundSize';
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
+
+useHead({
+  titleTemplate: 'EasyBalance'
+})
 </script>
 
 

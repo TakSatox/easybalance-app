@@ -5,4 +5,8 @@
 
 <script setup>
 
+
+useHead({
+  titleTemplate: 'EasyBalance - Pendências'
+})
 </script>

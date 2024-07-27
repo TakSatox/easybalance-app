@@ -2,12 +2,12 @@
     <main class="home">
         <LeftSidebar />
 
-        <div id="dropdown" v-if="!isRecordTransaction">
+        <div id="dropdown" v-if="!isRecordTransaction && !isRoot">
             <DateDropdownButton :title="allMonths[month]" :options="months"></DateDropdownButton>
             <DateDropdownButton :title="year.toString()" :options="years"></DateDropdownButton>
         </div>
         
-        <slot></slot>
+        <slot />
 
     </main>
     
@@ -75,6 +75,10 @@ const allMonths = [
 </script>
 
 <style>
+body {
+    background-image: url('@/assets/home/bg-home-desktop.png');
+}
+
 .home #dropdown {
     display: flex;
     flex-direction: row;

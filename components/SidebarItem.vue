@@ -33,7 +33,9 @@ const extension = props.imgFilename.split('.')[1]
 const imgUrl = ref('')
 
 onMounted(() => {
-  imgUrl.value = getImageUrl()
+    watchEffect(() => {
+        imgUrl.value = getImageUrl()
+    })
 });
 
 function getImageUrl() {

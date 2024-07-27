@@ -78,6 +78,10 @@ const rightCards =  ref([
     }
 ])
 
+useHead({
+  titleTemplate: 'EasyBalance - Dashboard'
+})
+
 </script>
 
 

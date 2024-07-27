@@ -4,6 +4,10 @@
 
 
 <script setup>
+
+useHead({
+  titleTemplate: 'EasyBalance - Transações'
+})
 </script>
 
 <style>

@@ -241,6 +241,10 @@ const filteredCategories = computed(() => {
 })
 
 
+useHead({
+  titleTemplate: 'EasyBalance - Registrar Transação'
+})
+
 </script>
 
 

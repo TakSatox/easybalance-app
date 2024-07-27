@@ -11,8 +11,7 @@ export default defineNuxtConfig({
   },
   
 
-  // Define it inside runtime config when the Tanuki pull request is merged into plugin main branch
-  // Defining it inside runtimeConfig will allow the use of environment variables in production enviroment
+  // Define it inside runtime config when the wavezync publish the new version of main in npm registry
   // link: https://github.com/wavezync/nuxt-vue3-google-signin/pull/25
   googleSignIn: {
     clientId: process.env['NUXT_GOOGLE_CLIENT_ID'],
