@@ -2,33 +2,30 @@
     <main class="home">
         <LeftSidebar />
 
-        <div id="dropdown" v-if="!isRecordTransaction && !isRoot">
-            <DateDropdownButton :title="allMonths[month]" :options="months"></DateDropdownButton>
-            <DateDropdownButton :title="year.toString()" :options="years"></DateDropdownButton>
+        <div class="dropdown-container">
+            <div id="dropdown" v-if="!isRecordTransaction && !isRoot">
+                <DateDropdownButton :title="allMonths[month]" :options="months"></DateDropdownButton>
+                <DateDropdownButton :title="year.toString()" :options="years"></DateDropdownButton>
+            </div>
         </div>
-        
-        <slot />
 
+        <div class="content">
+            <slot />
+        </div>
     </main>
-    
 </template>
 
-
 <script setup>
-
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
-
 import LeftSidebar from '@/components/LeftSidebar.vue'
 import DateDropdownButton from '@/components/DropdownButton.vue'
-
 
 const route = useRoute()
 
 const isRoot = computed(() => route.path === '/')
 const isRecordTransaction = computed(() => route.path === '/record-transactions')
-
 
 // TODO comes from API
 const years = [
@@ -71,29 +68,51 @@ const allMonths = [
     'Novembro',
     'Dezembro'
 ]
-
 </script>
 
 <style>
 body {
     background-image: url('@/assets/home/bg-home-desktop.png');
+    background-size: cover;
 }
 
-.home #dropdown {
+.home {
     display: flex;
     flex-direction: row;
-    margin-left: 700px;
-    margin-top: 20px;
-    width: 900px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.home .content {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    margin-top: 50px;
+}
+
+.dropdown-container {
+    display: flex;
+    justify-content: center; 
+    width: calc(100% - 250px); 
+    position: absolute;
+    top: 20px; 
+    left: 250px;
+}
+
+#dropdown {
+    display: flex;
+    flex-direction: row;
     user-select: none;
 }
 
-.home  #dropdown .item {
+#dropdown .item {
     display: flex;
     flex-direction: row;
     background-color: #FFF;
     padding: 10px;
-    height: 40px;;
+    height: 40px;
     width: 300px;
     border-radius: 20px;
     margin-left: 20px;
@@ -104,23 +123,21 @@ body {
     color: #00173393;
 }
 
-.home  #dropdown .item:hover {
+#dropdown .item:hover {
     color: #5F43F4;
 }
 
-.home  #dropdown .item #title {
+#dropdown .item #title {
     margin: auto;
     font-size: 20px;
     font-weight: bold;
 }
 
-
-.home  #dropdown .item .arrow {
+#dropdown .item .arrow {
     align-self: center;
 }
 
-
-.home  #dropdown ul {
+#dropdown ul {
     font-size: 20px;
     list-style-type: none;
     background-color: #FFF;
@@ -129,15 +146,13 @@ body {
     margin-top: 6px;
     margin-left: 20px;
     position: fixed;
-    width: 300px;
     height: 200px;
     overflow-y: auto;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
-    
 }
 
-.home  #dropdown li {
+#dropdown li {
     font-weight: bold;
     padding: 20px;
     margin-top: 10px;
@@ -148,29 +163,26 @@ body {
     border-radius: 10px;
 }
 
-.home  #dropdown li:hover {
+#dropdown li:hover {
     color: #5F43F4;
     box-shadow: 0px 4px 8px rgba(95, 67, 244, 0.2);
 }
 
-.home  #dropdown ul::-webkit-scrollbar {
+#dropdown ul::-webkit-scrollbar {
     width: 10px;
 }
 
-
-.home  #dropdown ul::-webkit-scrollbar-track {
+#dropdown ul::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
 }
 
-
-.home  #dropdown ul::-webkit-scrollbar-thumb {
+#dropdown ul::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
 }
 
-
-.home  #dropdown ul::-webkit-scrollbar-thumb:active {
+#dropdown ul::-webkit-scrollbar-thumb:active {
     background: #555; 
 }
 </style>
