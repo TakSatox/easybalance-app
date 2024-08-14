@@ -1,13 +1,8 @@
 import api from "@/server/api"
 
-const fetchUser = (email: string, token: string) => {
+const fetchUser = (email: string) => {
     return api.get(
         `/users/${email}`,
-        {
-            headers: { 
-                'Authorization': `${token}`
-            }
-        }
     ).then((response) => {
         return response
     }).catch((error) => {
