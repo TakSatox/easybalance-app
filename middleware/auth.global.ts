@@ -1,4 +1,4 @@
-import { useUserStore } from "~/stores/user";
+import { useUserStore } from "@/stores/user";
 
 const store = useUserStore()
 
@@ -6,7 +6,7 @@ const store = useUserStore()
 async function isAuthenticated(): Promise<boolean> { 
     const token = useCookie('idToken')
 
-    if (!token.value) {
+    if (!token) {
         return false;
     }
 
@@ -14,7 +14,7 @@ async function isAuthenticated(): Promise<boolean> {
         const { data, error } = await useFetch('/api/google-auth', {
           method: 'POST',
           body: {
-            token: token.value,
+            token: token,
           },
         });
 
@@ -22,12 +22,8 @@ async function isAuthenticated(): Promise<boolean> {
           return false;
         }
 
-        
         if (data.value) {
-            store.$patch({
-                name: data.value.given_name ?? '',
-                picture: data.value.picture ?? ''
-            })
+          await handleUser(data)
         }
 
         return true;
@@ -37,7 +33,33 @@ async function isAuthenticated(): Promise<boolean> {
         return false;
       }
 
- }
+}
+
+async function handleUser(authData: any) {
+  const { data, error } = await useFetch('/api/fetch-user', {
+        method: 'GET',
+        query: {
+          email: authData.value.email,
+        },
+      });
+
+      console.log('data --> ' + JSON.stringify(data))
+      // let userId = data.value.id;
+
+      // if (!userId) {
+      //   userResponse = await addUser(data.value.given_name ?? '', data.value.email ?? '');
+      //   userId = userResponse.data.id;
+      // }
+
+      store.$patch({
+          // id: userId ?? '',
+          name: authData.value.given_name ?? '',
+          email: authData.value.email ?? '',
+          picture: authData.value.picture ?? ''
+      })
+
+      console.log('id --> ' + store.id)
+}
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
 

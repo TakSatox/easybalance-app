@@ -5,8 +5,12 @@ export default { store: setActivePinia(piniaInstance) }
 
 
 export const useUserStore = defineStore('user', () => {
+    const id = ref('')
     const name = ref('')
+    const email = ref('')
     const picture = ref('')
+    
 
-    return { name, picture }
+
+    return { id, name, email, picture }
   })
