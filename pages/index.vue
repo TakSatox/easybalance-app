@@ -1,7 +1,7 @@
 <template>
     <main class="welcome-component">
-        <img :src="store.picture" />
-        <h1>Seja bem vindo, {{ store.name }}!</h1>
+        <img :src="user.picture" />
+        <h1>Seja bem vindo, {{ user.name }}!</h1>
 
         <div class="credits">
             <a href="https://www.linkedin.com/in/carlostak/" target="_blank">
@@ -17,7 +17,7 @@
 
 <script setup>
 import { useUserStore } from "@/stores/user";
-const store = useUserStore(piniaInstance);
+const user = useUserStore(piniaInstance);
 
 
 </script>

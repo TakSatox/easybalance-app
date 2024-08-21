@@ -1,17 +1,31 @@
 import api from "@/server/api"
+import { useUserStore } from "@/stores/user";
 
-const fetchUserTransactions = (id: number) => {
-    return api.get(
-        `/users/${id}/transactions`,
-    ).then((response) => {
-        return response
-    }).catch((error) => {
-        console.error("Error fetching user transactions", error)
-        throw error
-    })
-}
+const user = useUserStore()
 
-const addUserTransaction = (
+
+export default defineEventHandler(async (event) => {
+
+    const body = await readBody(event)
+
+    const transaction = await addTransaction(
+        user.id as number,
+        body.title,
+        body.description,
+        body.paymentMethod,
+        body.type,
+        body.initialDate,
+        body.endDate,
+        body.totalInstallment,
+        body.value,
+        body.categoryId
+    )
+
+    return transaction.data
+    
+})
+
+const addTransaction = (
     id: number,
     title: string,
     description: string,
@@ -43,5 +57,3 @@ const addUserTransaction = (
         throw error
     })
 }
-
-export { fetchUserTransactions, addUserTransaction }

@@ -1,6 +1,19 @@
 import api from "@/server/api"
+import { useUserStore } from "@/stores/user";
 
-const fetchUserCategoriesExpenses = (
+const user = useUserStore()
+
+export default defineEventHandler(async (event) => {
+    
+    const query = getQuery(event)
+
+    const expenses = await fetchExpenses(user.id as number, query.month as number, query.year as number)
+
+    return expenses.data
+    
+})
+
+const fetchExpenses = (
     id: number,
     month: number,
     year: number,
@@ -14,6 +27,3 @@ const fetchUserCategoriesExpenses = (
         throw error
     })
 }
-
-
-export { fetchUserCategoriesExpenses }

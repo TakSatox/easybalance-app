@@ -1,7 +1,6 @@
 import { useUserStore } from "@/stores/user";
 
-const store = useUserStore()
-
+const user = useUserStore()
 
 async function isAuthenticated(): Promise<boolean> { 
     const token = useCookie('idToken')
@@ -36,29 +35,34 @@ async function isAuthenticated(): Promise<boolean> {
 }
 
 async function handleUser(authData: any) {
-  const { data, error } = await useFetch('/api/fetch-user', {
+  const { data, error } = await useFetch('/api/users', {
         method: 'GET',
         query: {
           email: authData.value.email,
         },
       });
 
-      console.log('data --> ' + JSON.stringify(data))
-      // let userId = data.value.id;
+    let userId = data.value.id
 
-      // if (!userId) {
-      //   userResponse = await addUser(data.value.given_name ?? '', data.value.email ?? '');
-      //   userId = userResponse.data.id;
-      // }
+    if(error.value) {
+      const { body } = await $fetch('/api/users', {
+        method: 'POST',
+        body: {
+          email: authData.value.email,
+          name: authData.value.given_name,
+        },
+      });
 
-      store.$patch({
-          // id: userId ?? '',
-          name: authData.value.given_name ?? '',
-          email: authData.value.email ?? '',
-          picture: authData.value.picture ?? ''
-      })
+      userId = body.value.id;
+    }
 
-      console.log('id --> ' + store.id)
+    user.$patch({
+      id: userId ?? '',
+      name: authData.value.name ?? '',
+      email: authData.value.email ?? '',
+      picture: authData.value.picture ?? ''
+    })
+    
 }
 
 export default defineNuxtRouteMiddleware(async (to, from) => {

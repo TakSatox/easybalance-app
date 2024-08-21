@@ -3,7 +3,6 @@ export const piniaInstance = createPinia()
 
 export default { store: setActivePinia(piniaInstance) }
 
-
 export const useUserStore = defineStore('user', () => {
     const id = ref('')
     const name = ref('')

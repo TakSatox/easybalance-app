@@ -17,8 +17,8 @@
 
         <div class="footer" ref="logoutRef">
             <div @click.stop="isEnabled = !isEnabled" class="user">
-                <img id="user-img" :src="store.picture" />
-                <span id="user-name">{{ store.name }}</span>
+                <img id="user-img" :src="user.picture" />
+                <span id="user-name">{{ user.name }}</span>
 
                 <img v-if="isEnabled" class="arrow" :src="arrowUp"/>
                 <img v-else class="arrow" :src="arrowDown"/>
@@ -54,7 +54,7 @@ import { useUserStore } from "@/stores/user";
 import { ref, onMounted, onUnmounted } from 'vue';
 
 
-const store = useUserStore(piniaInstance)
+const user = useUserStore(piniaInstance)
 const isEnabled = ref(false)
 const logoutRef = ref(null)
 

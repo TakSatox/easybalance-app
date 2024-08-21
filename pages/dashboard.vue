@@ -54,7 +54,7 @@ const mainCards = ref([
         // TODO comes from API
         value: "6999.90"
     },
-]) 
+])
 
 
 const rightCards =  ref([

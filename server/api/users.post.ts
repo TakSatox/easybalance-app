@@ -1,15 +1,18 @@
 import api from "@/server/api"
 
-const fetchUser = (email: string) => {
-    return api.get(
-        `/users/${email}`,
-    ).then((response) => {
-        return response
-    }).catch((error) => {
-        console.error("Error fetching user", error)
-        throw error
-    })
-}
+export default defineEventHandler(async (event) => {
+    
+    const body = await readBody(event)
+
+    if (body.email === undefined || body.name === undefined) {
+        throw new Error('Email or name is undefined')
+    }
+
+    const user = await addUser(body.name as string, body.email as string)
+
+    return user.data
+    
+})
 
 const addUser = (name: string, email: string) => {
     return api.post(
@@ -25,6 +28,3 @@ const addUser = (name: string, email: string) => {
         throw error
     })
 }
-
-
-export { fetchUser, addUser }
