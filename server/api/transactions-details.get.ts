@@ -7,13 +7,13 @@ const user = useUserStore()
 export default defineEventHandler(async (event) => {
     const query = getQuery(event)
 
-    const details = await fetchUserTransactionsDetails(user.id as number, query.month as number, query.year as number, query.paid as boolean)
+    const details = await fetchDetails(user.id as number, query.month as number, query.year as number, query.paid as boolean)
 
     return details.data
 })
 
 
-const fetchUserTransactionsDetails = (
+const fetchDetails = (
     id: number,
     month: number,
     year: number,
