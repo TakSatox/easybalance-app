@@ -34,25 +34,36 @@ import DashboardChart from '@/components/DashboardChart.vue'
 import InvestingTree from '@/assets/home/investing-tree.png'
 
 import { ref } from 'vue';
+import { useUserStore } from "@/stores/user";
+
+const user = useUserStore(piniaInstance)
+const year = ref(2024)
+const month = ref(5)
+
+const { data, error } = await useFetch('/api/transactions-details-totals', {
+    method: 'GET',
+    query: {
+        id: user.id,
+        month: month.value,
+        year: year.value,
+    },
+});
 
 const mainCards = ref([
     {
         imgFilename: "balance.png",
         title: "Saldo",
-        // TODO comes from API
-        value: "6599.90"
+        value: data.value?.balanceValue
     },
     {
         imgFilename: "income.png",
         title: "Receitas",
-        // TODO comes from API
-        value: "6999.90"
+        value: data.value?.incomeTotalValue
     },
     {
         imgFilename: "expense.png",
         title: "Despesas",
-        // TODO comes from API
-        value: "6999.90"
+        value: data.value?.expenseTotalValue
     },
 ])
 
@@ -62,19 +73,19 @@ const rightCards =  ref([
         imgFilename: "income.png",
         // TODO comes from API
         title: "Janeiro",
-        value: "6000.00"
+        value: 6000.00
     },
     {
         imgFilename: "income.png",
         // TODO comes from API
         title: "Fevereiro",
-        value: "6000.00"
+        value: 6000.00
     },
     {
         imgFilename: "income.png",
         // TODO comes from API
         title: "Março",
-        value: "6000.00"
+        value: 6000.00
     }
 ])
 

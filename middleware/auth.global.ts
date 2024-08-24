@@ -1,6 +1,6 @@
 import { useUserStore } from "@/stores/user";
 
-const user = useUserStore()
+const user = useUserStore(piniaInstance)
 
 async function isAuthenticated(): Promise<boolean> { 
     const token = useCookie('idToken')

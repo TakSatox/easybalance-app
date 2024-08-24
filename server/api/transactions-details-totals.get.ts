@@ -1,14 +1,10 @@
 import api from "@/server/api"
-import { useUserStore } from "@/stores/user";
-
-const user = useUserStore()
-
 
 export default defineEventHandler(async (event) => {
     
     const query = getQuery(event)
 
-    const totals = await fetchTotals(user.id as number, query.month as number, query.year as number)
+    const totals = await fetchTotals(query.id as number, query.month as number, query.year as number)
 
     return totals.data
     

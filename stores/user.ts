@@ -1,4 +1,6 @@
 import { defineStore, createPinia, setActivePinia } from "pinia";
+import { ref } from "vue";
+
 export const piniaInstance = createPinia()
 
 export default { store: setActivePinia(piniaInstance) }

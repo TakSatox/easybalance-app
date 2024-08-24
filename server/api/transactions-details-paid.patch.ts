@@ -2,11 +2,9 @@ import api from "@/server/api"
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
-    const idParam = getRouterParam(event, 'id')
+    const query = getQuery(event)
 
-    const id = idParam ? parseInt(idParam, 10) : undefined;
-
-    const user = await patchIsPaid(id as number, body.isPaid as boolean)
+    const user = await patchIsPaid(query.id as number, body.isPaid as boolean)
 
     return user.data
 })

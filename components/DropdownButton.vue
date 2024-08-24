@@ -21,8 +21,8 @@ const props = defineProps({
 })
 
 const isEnabled = ref(false)
-const selectedValue = ref(props.title)
 const dropdownRef = ref(null)
+const selectedValue = ref(props.title)
 
 
 const selectValue = (option) => {

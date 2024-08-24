@@ -37,6 +37,7 @@ const handleLoginError = () => {
             @error="handleLoginError"
             shape="pill"
             text="continue_with"
+            size="medium"
           ></GoogleSignInButton>
         </div>
       </div>
@@ -44,6 +45,10 @@ const handleLoginError = () => {
 
 
 <style>
+
+div {
+  caret-color: transparent;
+}
 
 .login-welcome {
     color:white;
@@ -63,7 +68,7 @@ const handleLoginError = () => {
 }
 
 #g-login-message {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   font-size: 40px;
   font-weight: 700;
   font-style: normal;
@@ -75,7 +80,7 @@ const handleLoginError = () => {
 }
 
 #g-login-button {
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 </style>

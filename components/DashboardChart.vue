@@ -1,7 +1,6 @@
 <template>
     <main class="chart">
         <h1>Gastos por categoria</h1>
-        <img id="question" :src="question" />
 
         <div class="bar-line">
             <ChartBar 
@@ -21,7 +20,6 @@
 <script setup>
 import ChartBar from '@/components/ChartBar.vue'
 import { calculateBarsHeight } from '~/server/composables/getBarsHeight';
-import question from '@/assets/home/question.png'
 
 // TODO comes from API
 const categories = [
@@ -82,15 +80,6 @@ const bars = calculateBarsHeight(categories, 340, 60);
     margin-top: 30px;
     margin-left: 20px;
     width: 340px;
-}
-
-.home .chart #question {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    margin-left: 1070px;
-    margin-top: 10px;
-    cursor: pointer;
 }
 
 .home .chart .bar-line {

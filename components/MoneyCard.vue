@@ -15,7 +15,7 @@ import { ref } from 'vue'
 const props = defineProps({
     imgFilename: String,
     title: String,
-    value: String
+    value: Number
 })
 
 const currency = ref("R$")

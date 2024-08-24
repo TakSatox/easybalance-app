@@ -4,8 +4,8 @@
 
         <div class="dropdown-container">
             <div id="dropdown" v-if="!isRecordTransaction && !isRoot">
-                <DateDropdownButton :title="allMonths[month]" :options="months"></DateDropdownButton>
                 <DateDropdownButton :title="year.toString()" :options="years"></DateDropdownButton>
+                <DateDropdownButton :title="allMonths[month]" :options="months"></DateDropdownButton>
             </div>
         </div>
 

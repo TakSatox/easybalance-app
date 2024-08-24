@@ -1,13 +1,14 @@
 import api from "@/server/api"
 import { useUserStore } from "@/stores/user";
+import { piniaInstance } from "@/stores/user";
 
-const user = useUserStore()
+const user = useUserStore(piniaInstance)
 
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event)
 
-    const details = await fetchDetails(user.id as number, query.month as number, query.year as number, query.paid as boolean)
+    const details = await fetchDetails(query.id as number, query.month as number, query.year as number, query.paid as boolean)
 
     return details.data
 })
