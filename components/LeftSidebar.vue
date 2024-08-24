@@ -18,7 +18,7 @@
         <div class="footer" ref="logoutRef">
             <div @click.stop="isEnabled = !isEnabled" class="user">
                 <img id="user-img" :src="user.picture" />
-                <span id="user-name">{{ user.name }}</span>
+                <span id="user-name">{{ user.name.split(' ')[0] }}</span>
 
                 <img v-if="isEnabled" class="arrow" :src="arrowUp"/>
                 <img v-else class="arrow" :src="arrowDown"/>
@@ -28,13 +28,6 @@
                 </Transition>
                 
             </div>
-
-        
-            <hr>
-            
-            <a href="https://www.linkedin.com/in/carlostak/" target="_blank">
-                <img id="linkedin" :src="linkedin" />
-            </a>
             
         </div>
     </div>
@@ -165,6 +158,7 @@ onUnmounted(() => {
     font-weight: bold;
     color: #00173393;
     margin-left: 30px;
+    margin-bottom: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     width: 250px;
@@ -177,7 +171,6 @@ onUnmounted(() => {
 .sidebar .footer .user img {
     width: 50px;
     border-radius: 50%;
-    margin-left: 10px;
     user-select: none;
 }
 
